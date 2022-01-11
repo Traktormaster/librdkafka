@@ -677,7 +677,7 @@ static void rd_kafka_txn_handle_AddPartitionsToTxn (rd_kafka_t *rk,
                                 break;
 
                         case RD_KAFKA_RESP_ERR_CONCURRENT_TRANSACTIONS:
-                                retry_backoff_ms = 20;
+                                retry_backoff_ms = 1; /* immediate? */
                                 /* FALLTHRU */
                         case RD_KAFKA_RESP_ERR_COORDINATOR_LOAD_IN_PROGRESS:
                         case RD_KAFKA_RESP_ERR_UNKNOWN_TOPIC_OR_PART:
